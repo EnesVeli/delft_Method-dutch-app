@@ -2,6 +2,13 @@
 
 import { useState, useEffect, useRef } from 'react';
 
+declare global {
+  interface Window {
+    SpeechRecognition: any;
+    webkitSpeechRecognition: any;
+  }
+}
+
 export interface PronunciationEngineProps {
   targetText: string[];
 }
