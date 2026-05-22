@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🇳🇱 Delft Dutch App
 
-## Getting Started
+A full-stack, Progressive Web Application (PWA) designed to help users learn Dutch efficiently using the Delft method. Built with a modern React framework and a cloud database, this app is fully installable on mobile devices.
 
-First, run the development server:
+## 🚀 Live Demo & Download
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+* **🌐 Web Version:** [Play Live on Vercel](https://delft-method-dutch-app.vercel.app/)
+* **📱 Android App (APK):** [Download the latest .apk](https://github.com/EnesVeli delft_Method-dutch-app/releases/tag/v1.0)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* **40 Interactive Lessons:** Read, listen, and practice A1 level Dutch vocabulary.
+* **Progress Tracking:** Cloud-synced database to track your learning journey.
+* **Secure Admin Dashboard:** Custom middleware authentication to protect sensitive routes.
+* **Fully Native PWA:** Installable directly to iOS and Android home screens with offline capabilities and a custom Service Worker.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Tech Stack
 
-## Learn More
+* **Frontend:** Next.js (App Router), React, Tailwind CSS
+* **Backend:** Node.js, Next.js API Routes, Next.js Middleware (Basic Auth)
+* **Database:** MongoDB Atlas (Mongoose)
+* **Deployment:** Vercel (Web), PWABuilder (Android APK)
 
-To learn more about Next.js, take a look at the following resources:
+## 💻 Local Development Setup
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To run this project on your local machine:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/EnesVeli/delft_Method-dutch-app.git](https://github.com/EnesVeli/delft_Method-dutch-app.git)
 
-## Deploy on Vercel
+2. Install the dependencies:
+   npm install
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Create a .env file in the root directory and add your secret keys:
+    MONGODB_URI="your_mongodb_connection_string"
+    ADMIN_PASSWORD="your_secure_password"
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. npm run dev
+
+5. Open http://localhost:3000 in your browser.
