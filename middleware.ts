@@ -2,23 +2,26 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export function middleware(req: NextRequest) {
+  // FOOLPROOF LOCK: If the URL does not start with /admin, ignore it completely and let the user pass.
+  if (!req.nextUrl.pathname.startsWith('/admin')) {
+    return NextResponse.next();
+  }
+
   const basicAuth = req.headers.get('authorization');
   const url = req.nextUrl;
-
-  // Get the exact passcode from the environment variables
   const adminPassword = process.env.ADMIN_PASSWORD;
 
   if (basicAuth) {
     const authValue = basicAuth.split(' ')[1];
-    const [, pwd] = atob(authValue).split(':');
+    const [user, pwd] = atob(authValue).split(':');
 
-    // We only care about the password matching our secret env variable
-    if (pwd === adminPassword) {
+    // Require the username to be exactly 'admin' and the password to match the environment variable
+    if (user === 'admin' && pwd === adminPassword) {
       return NextResponse.next();
     }
   }
 
-  // If no auth or wrong password, trigger the browser's native pop-up
+  // Trigger the browser pop-up
   url.pathname = '/api/auth';
   return new NextResponse('Auth required', {
     status: 401,
@@ -29,5 +32,5 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/admin/:path*'], // Only protect the admin routes
+  matcher: ['/admin/:path*'],
 };
