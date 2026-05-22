@@ -4,16 +4,23 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Delft Dutch App',
     short_name: 'Delft Dutch',
-    description: 'Learn Dutch efficiently',
+    description: 'Learn Dutch efficiently using the Delft method.',
     start_url: '/',
-    display: 'standalone', // This hides the browser URL bar!
+    display: 'standalone',
     background_color: '#ffffff',
-    theme_color: '#fb923c', 
+    theme_color: '#fb923c',
     icons: [
       {
-        src: '/apple-icon.jpg', 
+        src: '/favicon.ico.jpg',
         sizes: '192x192',
         type: 'image/jpeg',
+        purpose: 'any maskable',
+      },
+      {
+        src: '/favicon.ico.jpg',
+        sizes: '512x512',
+        type: 'image/jpeg',
+        purpose: 'any maskable',
       },
     ],
   };
