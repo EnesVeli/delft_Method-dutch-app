@@ -11,15 +11,15 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: '#fb923c',
     icons: [
       {
-        src: '/favicon.ico.jpg',
+        src: '/icon-192x192.png',
         sizes: '192x192',
-        type: 'image/jpeg',
+        type: 'image/png',
         purpose: 'maskable',
       },
       {
-        src: '/favicon.ico.jpg',
+        src: '/icon-512x512.png',
         sizes: '512x512',
-        type: 'image/jpeg',
+        type: 'image/png',
         purpose: 'maskable',
       },
     ],
