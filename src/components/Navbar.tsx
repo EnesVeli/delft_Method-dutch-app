@@ -14,7 +14,7 @@ export default function Navbar() {
           <Link href="/review" className="text-sm font-bold text-gray-600 hover:text-[#FF9B00] transition-colors">
             Review Deck
           </Link>
-          <Link href="/admin" className="text-xs font-bold text-[#FF9B00] hover:bg-orange-100 transition-colors bg-orange-50 px-3 py-1.5 rounded-lg border border-orange-100 uppercase tracking-wide">
+          <Link href="/admin" prefetch={false} className="text-xs font-bold text-[#FF9B00] hover:bg-orange-100 transition-colors bg-orange-50 px-3 py-1.5 rounded-lg border border-orange-100 uppercase tracking-wide">
             Admin
           </Link>
         </div>
