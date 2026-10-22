@@ -1,0 +1,11 @@
+.next/
+out/
+build/
+coverage/
+node_modules/
+package-lock.json
+next-env.d.ts
+
+# Hand-written docs are owned by the planning chat; formatting them would churn every diff.
+docs/
+README.md
