@@ -1,41 +1,59 @@
-# 🇳🇱 Delft Dutch App
+# Delft Dutch
 
-A full-stack, Progressive Web Application (PWA) designed to help users learn Dutch efficiently using the Delft method. Built with a modern React framework and a cloud database, this app is fully installable on mobile devices.
+A free, gamified web app for learning Dutch from **A0 to A2**, with short, story-driven lessons about everyday life in the Netherlands.
 
-## 🚀 Live Demo & Download
+> **Status:** v2 in development. The v1 prototype is tagged [`v1-legacy`](../../tree/v1-legacy).
 
-* **🌐 Web Version:** [Play Live on Vercel](https://delft-method-dutch-app.vercel.app/)
-* **📱 Android App (APK):** [Download the latest .apk](https://github.com/EnesVeli delft_Method-dutch-app/releases/tag/v1.0)
+## What makes it different
 
-## ✨ Features
+- **20 everyday themes:** introductions, shopping, the doctor, finding work…
+- **Progress = competence.** Themes "glaze" like Delft tiles as you actually master them, not as you click.
+- **Spaced repetition** (FSRS) for every word you meet.
+- **No streak guilt.** Weekly goals instead of daily streaks.
+- **Start instantly.** No account needed; sign in later to sync.
 
-* **40 Interactive Lessons:** Read, listen, and practice A1 level Dutch vocabulary.
-* **Progress Tracking:** Cloud-synced database to track your learning journey.
-* **Secure Admin Dashboard:** Custom middleware authentication to protect sensitive routes.
-* **Fully Native PWA:** Installable directly to iOS and Android home screens with offline capabilities and a custom Service Worker.
+## Quick start
 
-## 🛠️ Tech Stack
+**Requirements:** Node 20+, [Supabase CLI](https://supabase.com/docs/guides/cli), Docker (for local Supabase).
 
-* **Frontend:** Next.js (App Router), React, Tailwind CSS
-* **Backend:** Node.js, Next.js API Routes, Next.js Middleware (Basic Auth)
-* **Database:** MongoDB Atlas (Mongoose)
-* **Deployment:** Vercel (Web), PWABuilder (Android APK)
+```bash
+git clone https://github.com/EnesVeli/delft_Method-dutch-app.git
+cd delft_Method-dutch-app
+npm install
+cp .env.example .env.local     # fill in the values printed by `supabase start`
+supabase start                 # local Postgres + Auth
+npm run dev                    # http://localhost:3000
+```
 
-## 💻 Local Development Setup
+## Scripts
 
-To run this project on your local machine:
+| Command | What it does |
+|---|---|
+| `npm run dev` | Start the dev server |
+| `npm run build` | Production build |
+| `npm test` | Unit tests (Vitest) |
+| `npm run test:e2e` | End-to-end tests (Playwright) |
+| `npm run lint` / `typecheck` | Code quality checks |
+| `npm run content:check` | Validate all lesson content |
 
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/EnesVeli/delft_Method-dutch-app.git](https://github.com/EnesVeli/delft_Method-dutch-app.git)
+## Documentation
 
-2. Install the dependencies:
-   npm install
+| Doc | What's in it |
+|---|---|
+| [Product vision](docs/product-vision.md) | Who it's for, scope, principles |
+| [Gamification](docs/gamification.md) | The 7 principles and the mechanics built on them |
+| [Curriculum](docs/curriculum.md) | Themes, lesson anatomy, exercise types, content format |
+| [Architecture](docs/architecture.md) | Stack, data model, auth, decisions |
+| [Roadmap](docs/roadmap.md) | Milestones and tickets |
 
-3. Create a .env file in the root directory and add your secret keys:
-    MONGODB_URI="your_mongodb_connection_string"
-    ADMIN_PASSWORD="your_secure_password"
+## Tech
 
-4. npm run dev
+Next.js 16 · React 19 · TypeScript · Tailwind CSS v4 · Supabase · ts-fsrs · Vitest · Playwright · Vercel
 
-5. Open http://localhost:3000 in your browser.
+## Content
+
+Lesson themes follow the everyday-topic structure common to NT2 courses. All texts, exercises and audio are original.
+
+## License
+
+TBD
